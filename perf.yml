@@ -29,7 +29,7 @@
   tasks:
   - name: stats
     tags: stats
-    shell: "tail -3 results/iperf*.out | awk '/Gbits/ { sum += $7; n++} END { print sum / n }'"
+    shell: "tail -n 3 results/iperf*.out | awk '/Gbits/ { sum += $7; n++} END { print sum / n }'"
     register: stats
   - name: print stats
     tags: stats
